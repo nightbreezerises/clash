@@ -20,7 +20,11 @@ git clone https://github.com/nightbreezerises/clash.git
 chmod +x ~/app/clash/clash-meta
 ```
 
-修改配置文件~/app/clash/config/config1.yaml
+**修改配置文件**
+
+配置文件目录放在~/app/clash/config，可以写多个配置文件，只需要修改一下启动命令即可
+
+下面是对配置文件~/app/clash/config/config1.yaml的修改
 
 ![image-20250915151907830](./image/config.png)
 
