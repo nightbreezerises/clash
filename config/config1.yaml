@@ -10,7 +10,7 @@ log-level: info
 # 控制面板
 external-controller: 0.0.0.0:9090
 #secret: "123456"           # 控制面板密码设置
-external-ui: ~/app/clash/clash-dashboard   # clash-dashboard路径设置
+external-ui: ~/app/clash/clash-dashboard   # clash-dashboard路径设置,~/可能识别失败，建议改为绝对路径
 unified-delay: true
 tcp-concurrent: true
 
