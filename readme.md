@@ -24,7 +24,7 @@ chmod +x ~/app/clash/clash-meta
 
 配置文件目录放在~/app/clash/config，可以写多个配置文件(需要注意一下端口冲突)，只需要修改一下启动命令即可
 
-下面是对配置文件~/app/clash/config/config1.yaml的修改
+下面是配置文件~/app/clash/config/config1.yaml的示例，注意后面要加上dns，代理，代理组和规则设置，可以把windows或mac上的clash verge配置文件复制过来，删掉重复部分
 
 ![image-20250915151907830](./image/config.png)
 
@@ -42,13 +42,13 @@ nohup ~/app/clash/clash-meta -d ~/app/clash/config -f ~/app/clash/config/config1
 
 ### 测试
 
-查看日志：
+查看日志
 
 ```bash
 cat ~/app/clash/log/clash1.log
 ```
 
-配置环境变量（当前终端生效）：
+订阅文件里默认端口是7890，要走这个代理需要配置一下环境变量（当前终端生效）
 
 ```bash
 export http_proxy="http://127.0.0.1:7890" https_proxy="http://127.0.0.1:7890" all_proxy="socks5://127.0.0.1:7890"
@@ -91,3 +91,9 @@ ps aux | grep clash
 关闭进程示例（格式为`kill 'pid'`）
 
 ![image-20250915151907830](./image/kill.png)
+
+### 注意
+
+可以把端口7890改为高位端口，不然容易被扫描端口
+
+可以同时开多个clash，但需要注意一下端口冲突，且环境变量仅当前终端生效，如果想让全局生效，可以修改配置文件~/.bashrc，然后执行`source ~/.bashrc`
